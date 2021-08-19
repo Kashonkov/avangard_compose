@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">avangard_compose</string>
+    <string name="login">Логин</string>
+    <string name="password">Пароль</string>
+    <string name="log_in">Войти</string>
+    <string name="discount">Скидки</string>
+    <string name="addresses">Адреса</string>
+    <string name="ar_pay">Оплата по QR</string>
+</resources>

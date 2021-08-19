@@ -1,0 +1,30 @@
+package com.kashonkov.avangard_compose.ui.theme
+
+import androidx.compose.ui.graphics.Color
+
+val Purple200 = Color(0xFFBB86FC)
+val Purple500 = Color(0xFF6200EE)
+val Purple700 = Color(0xFF3700B3)
+val Teal200 = Color(0xFF03DAC5)
+
+val Primary = Color(0xff025232)
+val PrimaryVariant_1 = Color(0xff013D25)
+val PrimaryVariant_2 = Color(0xff28975F)
+val OnPrimary = Color(0xffECEFF1)
+val Secondary = Color(0xffFF822E)
+val SecondaryVariant_1 = Color(0xffFFE0B2)
+val OnSecondary = Color(0xffFFFFFF)
+val Background = Color(0xff02492D)
+val Background_variant = Color(0xff063624)
+val Background_variant2 = Color(0xff042e22)
+val OnBackground = Color(0xfff6fcf8)
+val OnBackground2 = Color(0xff9DC4B8)
+val Optional_1 = Color(0xffECEFF1)
+val Surface = Color(0xffFFFFFF)
+val OnSurface_1 = Color(0xff212121)
+val OnSurface_2 = Color(0xff616161)
+val Error = Color(0xffD50000)
+val OnError = Color(0xffF24013)
+val Shadow = Color(0x4c000000)
+val Dim = Color(0x8e000000)
+val Transparent = Color(0x00000000)
