@@ -1,4 +1,4 @@
-package com.kashonkov.avangard_compose.feature.auth.ui
+package com.kashonkov.avangard_compose.feature.auth.ui.login
 
 import android.util.Log
 import androidx.compose.foundation.BorderStroke
@@ -21,11 +21,11 @@ import androidx.compose.ui.unit.dp
 import com.kashonkov.avangard_compose.R
 import com.kashonkov.avangard_compose.ui.compose.AvangardTextField
 import com.kashonkov.avangard_compose.ui.compose.TopRoundedContainer
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.setValue
 
 @Composable
-fun LoginPage() {
+fun LoginPage(viewModel: LoginViewModel, onSuccessfullyLogin: () -> Unit) {
+    val state = viewModel.currentState
+
     Scaffold(
         topBar = {
             TopAppBar(
@@ -54,12 +54,8 @@ fun LoginPage() {
             ) {
                 val modifier = Modifier.padding(horizontal = 40.dp)
 
-                var login by remember {
-                    mutableStateOf("")
-                }
-
                 AvangardTextField(
-                    value = login, onValueChange = {login = it}, modifier = modifier
+                    value = state.login ?: "", onValueChange = viewModel::onLoginChanged, modifier = modifier
                         .padding(top = 6.dp)
                         .fillMaxWidth(), label = stringResource(id = R.string.login)
                 )
@@ -69,7 +65,7 @@ fun LoginPage() {
                 }
 
                 AvangardTextField(
-                    value = password.value, onValueChange = {password.value = it},
+                    value = state.password ?: "", onValueChange = viewModel::onPasswordChange,
                     modifier = modifier
                         .padding(top = 56.dp)
                         .fillMaxWidth(),
@@ -83,7 +79,7 @@ fun LoginPage() {
 
                 Row(modifier = modifier.padding(top = 44.dp)) {
                     OutlinedButton(
-                        onClick = { Log.i("myLog", "olololo") }, modifier = Modifier.weight(1f), border = BorderStroke(
+                        onClick = { onSuccessfullyLogin() }, modifier = Modifier.weight(1f), border = BorderStroke(
                             ButtonDefaults.OutlinedBorderSize, MaterialTheme.colors.primary
                         )
                     ) {
@@ -91,7 +87,7 @@ fun LoginPage() {
                     }
 
                     OutlinedButton(
-                        onClick = { Log.i("myLog", "olololo") }, modifier = Modifier
+                        onClick = { onSuccessfullyLogin() }, modifier = Modifier
                             .padding(start = 20.dp)
                             .height(36.dp)
                             .width(40.dp), border = BorderStroke(
